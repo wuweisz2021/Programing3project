@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Project-Leaf Team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/style.css"> 
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body class="light-theme">
+<header>
+    <div class="container">
+      <nav class="navbar">
+         <div class="btn-group">
+          <button class="theme-btn theme-btn-mobile light">
+          </button>
+          <button class="nav-menu-btn">
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+        </div>
+        <div class="flex-wrapper">
+          <ul class="desktop-nav">
+            <li>
+              <a href="#P1" class="nav-link">Home</a>
+            </li>
+            <li>
+              <a th:href="@{/register}" class="nav-link">Register</a>
+            </li>
+            <li>
+              <a th:href="@{/login}" class="nav-link">Login</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-nav">
+          <button class="nav-close-btn">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+          <div class="wrapper">
+            <p class="h3 nav-title">Main Menu</p>
+            <ul>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a th:href="@{/register}" class="nav-link">Register</a>
+              </li>
+              <li class="nav-item">
+                <a th:href="@{/login}" class="nav-link">Login</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="h3 nav-title">Topics</p>
+            <ul>
+              <li class="nav-item">
+                <a href="#" class="nav-link">List of Users</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">List of Orders</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">List of Parks</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+</header>
+
+<main>
+    <div class="park">
+      <div class="container">
+        <div class="left">
+			<h1>Welcome to <b>Leaf&nbsp; Team</b></h1>
+			<h2>(Kevin, Xiaoming and Wuwei)</h2>
+          <p class="h3">
+            Leaf is Life<br/>Looking for fall colors around Montreal...
+          </p>
+
+          <div class="btn-group">
+            <a th:href="@{/register}" class="btn btn-primary">Register</a>
+            <a th:href="@{/login}" class="btn btn-secondary">Sign in</a>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="pattern-bg"></div>
+          <div class="img-box">
+            <img src="./images/leaf.png" alt="Leaf Team" class="park-img">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="container">
+        <div class="blog">
+          <h2 class="h2"><a id="P1">Latest Parks Information</a></h2> 
+          <div class="blog-card-group">
+            <div class="blog-card">
+              <div class="blog-card-banner">
+                <img src="./images/blog-1.png" alt="Mount Royal Park"
+                  width="250" class="blog-banner-img">
+              </div>
+
+              <div class="blog-content-wrapper">
+
+                <button class="blog-topic text-tiny">Mount Royal Park</button>
+
+                <h3>
+                  <a href="#" class="h3">
+                    Mount Royal Park
+                  </a>
+                </h3>
+
+                <p class="blog-text">
+                 Mount Royal Park, which is home to the mountain that the city of Montreal is 
+                 named after is one of the top destinations to visit in the city at any time of year. 
+                 In the fall, however, this should be one of the top places on your travel list. 
+                 This accessible park is located immediately west of downtown Montreal and can be reached 
+                 on foot, bike, or via public transit.
+                </p>
+                <div class="wrapper-flex">
+                  <div class="profile-wrapper">
+                    <img src="./images/author.png" alt="Leaf Team" width="50">
+                  </div>
+                  <div class="wrapper">
+                    <a href="#" class="h4">Leaf Team</a>
+                    <p class="text-sm">
+                      <time datetime="2022-11-01">Nov 01, 2022</time>
+                      <span class="separator"></span>
+                      <ion-icon name="time-outline"></ion-icon>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="blog-card">
+              <div class="blog-card-banner">
+                <img src="./images/blog-2.png" alt="Montreal Botanical Garden" width="250"
+                  class="blog-banner-img">
+              </div>
+              <div class="blog-content-wrapper">
+                <button class="blog-topic text-tiny">Montreal Botanical Garden</button>
+                <h3><a href="" class="h3">Montreal Botanical Garden</a></h3>
+                <p class="blog-text">
+				Even though admission to these grounds isn't free, the Montreal Botanical Garden 
+				gives you a bang for your buck when you visit in the fall since the hugely popular 
+				Gardens of Light festival coincides with Montreal's autumn colors. The lanterns of the 
+				festival are best viewed at sundown, so consider dropping by the garden's arboretum in 
+				the late afternoon for a peaceful stroll before making your way to the main attraction 
+				in the Chinese Garden.
+                </p>
+                <div class="wrapper-flex">
+                  <div class="profile-wrapper">
+                    <img src="./images/author.png" alt="Leaf Team" width="50">
+                  </div>
+                  <div class="wrapper">
+                    <a href="#" class="h4">Leaf Team</a>
+                    <p class="text-sm">
+                      <time datetime="2022-11-02">Nov 02, 2022</time>
+                      <span class="separator"></span>
+                      <ion-icon name="time-outline"></ion-icon>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="blog-card">
+              <div class="blog-card-banner">
+                <img src="./images/blog-3.png" alt="Bois-de-Liesse Park" width="250"
+                  class="blog-banner-img">
+              </div>
+              <div class="blog-content-wrapper">
+                <button class="blog-topic text-tiny">Bois-de-Liesse Park</button>
+                <h3><a href="" class="h3">Bois-de-Liesse Park</a></h3>
+                <p class="blog-text">
+				If you're walking in these 400 acres of old-growth hardwood and silver birch forests 
+				surrounded by picturesque streams, don't be surprised if you run into a fox while 
+				meandering along Bois-de-Liesse Park's trails. This out-of-the-way park is one of Montreal's 
+				best-kept secrets, located a bit outside of the city center not far from the airport. 
+                </p>
+                <div class="wrapper-flex">
+                  <div class="profile-wrapper">
+                    <img src="./images/author.png" alt="Leaf Team" width="50">
+                  </div>
+                  <div class="wrapper">
+                    <a href="#" class="h4">Leaf Team</a>
+                    <p class="text-sm">
+                      <time datetime="2022-11-03">Nov 03, 2022</time>
+                      <span class="separator"></span>
+                      <ion-icon name="time-outline"></ion-icon>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="blog-card">
+              <div class="blog-card-banner">
+                <img src="./images/blog-4.png" alt="Morgan Arboretumt"
+                  width="250" class="blog-banner-img">
+              </div>
+
+              <div class="blog-content-wrapper">
+
+                <button class="blog-topic text-tiny">Morgan Arboretum</button>
+
+                <h3><a href="" class="h3">Morgan Arboretum</a></h3>
+
+                <p class="blog-text">
+				If you're walking in these 400 acres of old growth hardwood and silver birch forests 
+				surrounded by picturesque streams, don't be surprised if you run into a fox while 
+				meandering along Bois-de-Liesse Park's trails. This out of the way park is one of 
+				Montreal's best kept secrets, located a bit outside of the city center not far from 
+				the airport. A forest reserve on the western tip of the island of Montreal, Morgan 
+				Arboretum is home to 330 horticultural species 40 of which are indigenous to Canada 
+				all on protected land as part of McGill University's Macdonald Campus. 
+                </p>
+
+                <div class="wrapper-flex">
+
+                  <div class="profile-wrapper">
+                    <img src="./images/author.png" alt="Leaf Team" width="50">
+                  </div>
+
+                  <div class="wrapper">
+                    <a href="#" class="h4">Leaf Team</a>
+
+                    <p class="text-sm">
+                      <time datetime="2022-11-04">Nov 04, 2022</time>
+                      <span class="separator"></span>
+                      <ion-icon name="time-outline"></ion-icon>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="blog-card">
+              <div class="blog-card-banner">
+                <img src="./images/blog-5.png" alt="Old Port" width="250" class="blog-banner-img">
+              </div>
+              <div class="blog-content-wrapper">
+                <button class="blog-topic text-tiny">Old Port</button>
+                <h3><a href="" class="h3">Old Port</a></h3>
+                <p class="blog-text">
+				For anyone's first time in Montreal, the Old Port is an obligatory stop. It's one of the 
+				most important landmarks in the city and sits on the banks of the Saint Lawrence River, 
+				making it one of the most picturesque places in the city as well as one of the most historic.
+                </p>
+                <div class="wrapper-flex">
+                  <div class="profile-wrapper">
+                    <img src="./images/author.png" alt="Leaf Team" width="50">
+                  </div>
+                  <div class="wrapper">
+                    <a href="#" class="h4">Leaf Team</a>
+                    <p class="text-sm">
+                      <time datetime="2022-11-05">Nov 05, 2022</time>
+                      <span class="separator"></span>
+                      <ion-icon name="time-outline"></ion-icon>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="blog-card">
+              <div class="blog-card-banner">
+                <img src="./images/blog-6.png" alt="Parc Jean-Drapeau" width="250" class="blog-banner-img">
+              </div>
+
+              <div class="blog-content-wrapper">
+                <button class="blog-topic text-tiny">Parc Jean-Drapeau</button>
+
+                <h3><a href="" class="h3">Parc Jean-Drapeau</a>
+                </h3>
+
+                <p class="blog-text">
+				Floralies Gardens' cotton ball treetops and weeping willows are a sight to behold in any season, 
+				but there's no better time to go than during Quebec's peak fall foliage. The gardens and public 
+				art pepper the grounds of Parc Jean-Drapeau, located on Saint Helen's Island just across from the Old Port.
+                </p>
+
+                <div class="wrapper-flex">
+
+                  <div class="profile-wrapper">
+                    <img src="./images/author.png" alt="Leaf Team" width="50">
+                  </div>
+                  <div class="wrapper">
+                    <a href="#" class="h4">Leaf Team</a>
+
+                    <p class="text-sm">
+                      <time datetime="2022-11-06">Nov 06, 2022</time>
+                      <span class="separator"></span>
+                      <ion-icon name="time-outline"></ion-icon>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="blog-card">
+              <div class="blog-card-banner">
+                <img src="./images/blog-7.png" alt="Parc Angrignon" width="250" class="blog-banner-img">
+              </div>
+
+              <div class="blog-content-wrapper">
+
+                <button class="blog-topic text-tiny">Parc Angrignon</button>
+
+                <h3><a href="" class="h3">Parc Angrignon</a></h3>
+
+                <p class="blog-text">
+				Parc Angrignon is gorgeous, it's got waterfalls and streams, weeping willows, ponds, and hidden paths lined 
+				by berries, and it's conveniently located in the southwest part of the city where no car is necessary. 
+                </p>
+
+                <div class="wrapper-flex">
+                  <div class="profile-wrapper">
+                    <img src="./images/author.png" alt="Leaf Team" width="50">
+                  </div>
+                  <div class="wrapper">
+                    <a href="#" class="h4">Leaf Team</a>
+                    <p class="text-sm">
+                      <time datetime="2022-11-07">Nov 07, 2022</time>
+                      <span class="separator"></span>
+                      <ion-icon name="time-outline"></ion-icon>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="blog-card">
+              <div class="blog-card-banner">
+                <img src="./images/blog-8.png" alt="Bois de l'Île Bizard" width="250" class="blog-banner-img">
+              </div>
+              <div class="blog-content-wrapper">
+                <button class="blog-topic text-tiny">Bois de l'Île Bizard</button>
+                <h3><a href="" class="h3">Bois de l'Île Bizard</a></h3>
+                <p class="blog-text">
+				Best reached by car or by bicycle, Bois de l'Île Bizard is about as far removed from the city center as 
+				you can get while still remaining within city limits. It's on the northwestern island and Montreal borough, 
+				Île Bizard. Driving is the easiest way to reach the island since it's about 40 minutes away from downtown by 
+				car and public transit is limited.
+                </p>
+
+                <div class="wrapper-flex">
+
+                  <div class="profile-wrapper">
+                    <img src="./images/author.png" alt="Leaf Team" width="50">
+                  </div>
+
+                  <div class="wrapper">
+                    <a href="#" class="h4">Leaf Team</a>
+
+                    <p class="text-sm">
+                      <time datetime="2022-11-08">Nov 08, 2022</time>
+                      <span class="separator"></span>
+                      <ion-icon name="time-outline"></ion-icon>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="blog-card">
+              <div class="blog-card-banner">
+                <img src="./images/blog-9.png" alt="Parc La Fontaine" width="250" class="blog-banner-img">
+              </div>
+              <div class="blog-content-wrapper">
+                <button class="blog-topic text-tiny">Parc La Fontaine</button>
+                <h3><a href="" class="h3">Parc La Fontaine</a>
+                </h3>
+                <p class="blog-text">
+				Best visited before the central pond and fountain area is drained for the season, La Fontaine's 
+				huge trees rain colourful leaves every which way you look once the city hits peak fall season. 
+				We're always keeping this park in mind as it's among the most accessible, and there are tons of 
+				restaurants, cafés and bars selling growlers of craft beers to put together a picnic to enjoy 
+				while you're bundled up with a bunch of friends.
+                </p>
+                <div class="wrapper-flex">
+                  <div class="profile-wrapper">
+                    <img src="./images/author.png" alt="Leaf Team" width="50">
+                  </div>
+                  <div class="wrapper">
+                    <a href="#" class="h4">Leaf Team</a>
+                    <p class="text-sm">
+                      <time datetime="2022-11-09">Nov 09, 2022</time>
+                      <span class="separator"></span>
+                      <ion-icon name="time-outline"></ion-icon>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="blog-card">
+              <div class="blog-card-banner">
+                <img src="./images/blog-10.png" alt="Parc nature du Cap Saint Jacques" width="250" class="blog-banner-img">
+              </div>
+
+              <div class="blog-content-wrapper">
+
+                <button class="blog-topic text-tiny">Parc nature du Cap Saint Jacques</button>
+
+                <h3><a href="" class="h3">Parc nature du Cap Saint Jacques</a></h3>
+
+                <p class="blog-text">
+                Parc nature du Cap Saint Jacques is Montreal's largest park. Located on the western part of the island, 
+                it is bordered by the Lac des Deux Montagnes and the Rivière des Prairies. The park's many paths offer 
+                magnificent views of the water.
+                </p>
+                <div class="wrapper-flex">
+                  <div class="profile-wrapper">
+                    <img src="./images/author.png" alt="Leaf Team" width="50">
+                  </div>
+
+                  <div class="wrapper">
+                    <a href="#" class="h4">Leaf Team</a>
+
+                    <p class="text-sm">
+                      <time datetime="2022-11-10">Nov 10, 2022</time>
+                      <span class="separator"></span>
+                      <ion-icon name="time-outline"></ion-icon>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn load-more">Load More</button>
+        </div>
+
+
+        <div class="aside">
+          <div class="topics">
+            <h2 class="h2">Parks</h2>
+            <a href="#" class="topic-btn">
+              <div class="icon-box">
+                <ion-icon name="server-outline"></ion-icon>
+              </div>
+              <p>Mount Royal Park</p>
+            </a>
+
+            <a href="#" class="topic-btn">
+              <div class="icon-box">
+                <ion-icon name="accessibility-outline"></ion-icon>
+              </div>
+
+              <p>Montreal Botanical Garden</p>
+            </a>
+
+            <a href="#" class="topic-btn">
+              <div class="icon-box">
+                <ion-icon name="rocket-outline"></ion-icon>
+              </div>
+
+              <p>Bois de Liesse Park</p>
+            </a>
+
+          </div>
+
+          <div class="tags">
+
+            <h2 class="h2">Tags</h2>
+
+            <div class="wrapper">
+
+              <button class="hashtag">#Morgan Arboretum</button>
+              <button class="hashtag">#Old Port</button>
+              <button class="hashtag">#Parc Jean Drapeau</button>
+              <button class="hashtag">#Parc Angrignon</button>
+              <button class="hashtag">#Bois de l'Ile Bizard</button>
+              <button class="hashtag">#Parc La Fontaine</button>
+              <button class="hashtag">#Parc Cap Saint Jacques</button>
+            </div>
+          </div>
+          <div class="contact">
+            <h2 class="h2">Let's Talk</h2>
+            <div class="wrapper">
+              <p>
+                Do you want to know where is best place to see the colors of fall around Montreal? Please follow us and let us have a conversation.
+              </p>
+              <ul class="social-link">
+                <li>
+                  <a href="#" class="icon-box discord">
+                    <ion-icon name="logo-discord"></ion-icon>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="icon-box twitter">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="icon-box facebook">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="newsletter">
+            <h2 class="h2">Newsletter</h2>
+            <div class="wrapper">
+              <p>
+                Subscribe to our newsletter to be among the first to keep up with the latest updates.
+              </p>
+              <form action="#">
+                <input type="email" name="email" placeholder="Email Address" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!--- #FOOTER-->
+  <footer>
+    <div class="container">
+      <div class="wrapper">
+        <a href="#" class="footer-logo">
+          <img src="./images/leaf.svg" alt="Leaf Team's Logo" width="120" class="logo-light">
+        </a>
+        <p class="footer-text">
+          Leaf Team is looking for good places around Montreal and share with you all.
+        </p>
+      </div>
+      <div class="wrapper">
+        <p class="footer-title">Leaf Team Memebers</p>
+        <ul>
+          <li>
+            <a href="#" class="footer-link">Darby, Kevin</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Su, Xiaoming</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Wu, Wei</a>
+          </li>
+        </ul>
+      </div>
+      <div class="wrapper">
+        <p class="footer-title">Leaf Team</p>
+        <ul>
+          <li>
+            <a href="#" class="footer-link">Privacy Notice</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Cookie Policy</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Terms Of Use</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="copyright">
+      &copy; Copyright 2022 <a href="#">Leaf Team</a>
+    </p>
+  </footer>
+</body>
+</html>

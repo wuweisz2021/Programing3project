@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>New Park</title>
+<link rel="stylesheet" href="./css/style.css"> 
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body class="light-theme">
+<header>
+    <div class="container">
+      <nav class="navbar">
+         <div class="btn-group">
+          <button class="theme-btn theme-btn-mobile light">
+          </button>
+          <button class="nav-menu-btn">
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+        </div>
+        <div class="flex-wrapper">
+          <ul class="desktop-nav">
+            <li>
+              <a href="#P1" class="nav-link">Home</a>
+            </li>
+            <li>
+              <a th:href="@{/register}" class="nav-link">Register</a>
+            </li>
+            <li>
+              <a th:href="@{/login}" class="nav-link">Login</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-nav">
+          <button class="nav-close-btn">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+          <div class="wrapper">
+            <p class="h3 nav-title">Main Menu</p>
+            <ul>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a th:href="@{/register}" class="nav-link">Register</a>
+              </li>
+              <li class="nav-item">
+                <a th:href="@{/login}" class="nav-link">Login</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="h3 nav-title">Topics</p>
+            <ul>
+              <li class="nav-item">
+                <a href="#" class="nav-link">List of Users</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">List of Orders</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">List of Parks</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+</header>
+	<div class="container text-center">
+		<div>
+			<h1>New Park</h1>
+		</div>
+
+		
+		<form th:action="@{/savePark}" th:object="${park}" enctype="multipart/form-data"
+			method="post" style="max-width: 800px; margin: 0 auto;">
+
+			<div class="form-group row">
+				<label class="col-4 col-form-label"> Park ID: </label>
+				<div class="col-8">
+					<input type="number" th:field="*{parkId}" class="form-control" required
+						 placeholder="Park ID" />
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('parkId')}"
+                    th:errors="*{parkId}"></div>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-4 col-form-label"> Park Name: </label>
+				<div class="col-8">
+					<input type="text" th:field="*{parkName}" class="form-control" required
+						minlength="2" maxlength="15" placeholder="Park Name" />
+				</div>
+			</div>
+			
+			<div class="form-group row">
+					<label class="col-4 col-form-label">Price: </label>
+					<div class="col-8">
+						<input type="number" th:field="*{price}" class="form-control"
+							required placeholder="Price" />
+							<div class="alert alert-danger" th:if="${#fields.hasErrors('price')}"
+                    th:errors="*{price}"></div>
+							
+					</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-4 col-form-label"> Address: </label>
+				<div class="col-8">
+					<input type="text" th:field="*{address}" class="form-control" required
+						minlength="2" maxlength="40" placeholder="Address" />
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-4 col-form-label"> Introduction: </label>
+				<div class="col-8">
+					<input type="text" th:field="*{introduction}" class="form-control" required
+						minlength="2" maxlength="15" placeholder="Introduction" />
+				</div>
+			</div>
+			
+						<div class="form-group row">
+				<label class="col-4 col-form-label"> Image: </label>
+				<div class="col-8">
+					<input type="file" name="image" class="form-control" accept="image/png, image/jpeg"/>
+				</div>
+			</div>
+			
+
+			<div class="m-3">
+	
+				
+				<div class="form-group row">
+					<label class="col-4 col-form-label">Pulished: </label>
+					<div class="col-8">
+						<input type="text" th:field="*{pulished}" class="form-control"
+							required placeholder="Pulished" />
+					</div>
+				</div>
+
+		
+
+
+				<div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	 <!--- #FOOTER-->
+  <footer>
+    <div class="container">
+      <div class="wrapper">
+        <a href="#" class="footer-logo">
+          <img src="./images/leaf.svg" alt="Leaf Team's Logo" width="120" class="logo-light">
+        </a>
+        <p class="footer-text">
+          Leaf Team is looking for good places around Montreal and share with you all.
+        </p>
+      </div>
+      <div class="wrapper">
+        <p class="footer-title">Leaf Team Memebers</p>
+        <ul>
+          <li>
+            <a href="#" class="footer-link">Darby, Kevin</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Su, Xiaoming</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Wu, Wei</a>
+          </li>
+        </ul>
+      </div>
+      <div class="wrapper">
+        <p class="footer-title">Leaf Team</p>
+        <ul>
+          <li>
+            <a href="#" class="footer-link">Privacy Notice</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Cookie Policy</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Terms Of Use</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="copyright">
+      &copy; Copyright 2022 <a href="#">Leaf Team</a>
+    </p>
+  </footer>
+</body>
+</html>
