@@ -20,7 +20,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
-
 @Entity
 @Table(name = "user")
 public class User {
@@ -43,17 +42,14 @@ public class User {
 	private String password;
 
 	@DateTimeFormat(pattern = "yyyy-mm-dd")
-	@CreationTimestamp
+	@Column(nullable = false, updatable = false)
 	private Date createdAt;
 
 	@DateTimeFormat(pattern = "yyyy-mm-dd")
-	@UpdateTimestamp
 	private Date updatedAt;
-//@JoinColumn(name = "user_id", referencedColumnName = "id")
 
-	@OneToMany(mappedBy="user")
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<Order> user_orders;
-
 
 	public String getPassword() {
 		return password;
@@ -93,6 +89,7 @@ public class User {
 	public void setUser_orders(List<Order> user_orders) {
 		this.user_orders = user_orders;
 	}
+
 	public String getId() {
 		return id;
 	}
@@ -107,6 +104,7 @@ public class User {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+
 	}
 
 	public String getEmail() {
@@ -141,18 +139,21 @@ public class User {
 		this.updatedAt = updatedAt;
 	}
 
-	/*
-	 * @PrePersist protected void onCreate() { createdAt = new Date(); }
-	 * 
-	 * @PreUpdate protected void onUpdate() { updatedAt = new Date(); }
-	 */
+	@PrePersist
+	protected void onCreate() {
+		createdAt = new Date();
+	}
+
+	@PreUpdate
+	protected void onUpdate() {
+		updatedAt = new Date();
+	}
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", userName=" + userName + ", email=" + email + ", role=" + role + ", password="
 				+ password + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + ", user_orders=" + user_orders
 				+ ", confirmPassword=" + confirmPassword + "]";
 	}
-
-
 
 }

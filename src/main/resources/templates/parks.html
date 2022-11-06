@@ -7,6 +7,12 @@
 <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
 <script type="text/javascript"
 	src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+  <style>
+  .img-responsive{ 
+    max-height: 250px;
+    max-width: 200px;
+  }
+  </style>
 </head>
 <body class="light-theme">
 <header>
@@ -111,7 +117,7 @@
 						<td th:text="${park.parkName}">Park Name</td>
 						<td th:text="${park.address}">Park Address</td>
 						<td th:text="${park.introduction}">Introduction</td>
-						<td><img th:src="${park.imagePath}" /></td>
+						<td><img th:src="${park.imagePath}" th:class="img-responsive" /></td>
 						<td th:text="${park.price}">Price</td>
 						<td th:text="${park.pulished}">Pulished</td>
 						<td th:text="${park.createdAt}">created at</td>

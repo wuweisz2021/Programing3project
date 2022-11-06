@@ -2,7 +2,7 @@ package com.example.login;
 
 import java.util.Collection;
 import java.util.List;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,8 +30,7 @@ public class Order {
 	@JoinColumn(name = "user_id")
 	private User user;
 
-	@ManyToMany
-
+	@ManyToMany(cascade = CascadeType.PERSIST)
 	@JoinTable(name = "parks_ordered", joinColumns = @JoinColumn(name = "OrderId", referencedColumnName = "OrderId"), inverseJoinColumns = @JoinColumn(name = "parkId", referencedColumnName = "parkId"))
 	private List<Park> parks;
 
