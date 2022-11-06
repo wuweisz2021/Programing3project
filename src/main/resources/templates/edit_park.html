@@ -23,18 +23,20 @@
  -->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Edit Park</title>
-<link rel="stylesheet" href="./css/style.css"> 
-<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+  <meta charset="ISO-8859-1">
+  <title>Edit Park</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
+
 <body class="light-theme">
-<header>
+  <header>
     <div class="container">
       <nav class="navbar">
-         <div class="btn-group">
+        <div class="btn-group">
           <button class="theme-btn theme-btn-mobile light">
           </button>
           <button class="nav-menu-btn">
@@ -90,90 +92,85 @@
         </div>
       </nav>
     </div>
-</header>
-	<div class="container text-center">
-		<div>
-			<h1>Edit Park</h1>
-		</div>
-		<form th:action="@{/savePark}" th:object="${park}"
-			method="post" style="max-width: 800px; margin: 0 auto;">
+  </header>
+  <div class="container text-center">
+    <div>
+      <h1>Edit Park</h1>
+    </div>
+    <form th:action="@{/savePark}" th:object="${park}" enctype="multipart/form-data" method="post"
+      style="max-width: 800px; margin: 0 auto;">
 
-			<div class="form-group row">
-				<label class="col-4 col-form-label"> Park ID: </label>
-				<div class="col-8">
-					<input type="number" th:field="*{parkId}" class="form-control" required
-						 readonly="readonly" />
+      <div class="form-group row">
+        <label class="col-4 col-form-label"> Park ID: </label>
+        <div class="col-8">
+          <input type="number" th:field="*{parkId}" class="form-control" required readonly="readonly" />
 
-				</div>
-			</div>
+        </div>
+      </div>
 
 
-			<div class="form-group row">
-				<label class="col-4 col-form-label"> Park Name: </label>
-				<div class="col-8">
-					<input type="text" th:field="*{parkName}" class="form-control" required
-						minlength="2" maxlength="15" placeholder="Park Name" />
-				</div>
-			</div>
-			
-			<div class="form-group row">
-					<label class="col-4 col-form-label">Price: </label>
-					<div class="col-8">
-						<input type="number" th:field="*{price}" class="form-control"
-							required placeholder="Price" />
-							<div class="alert alert-danger" th:if="${#fields.hasErrors('price')}"
-                    th:errors="*{price}"></div>							
-					</div>
-			</div>
+      <div class="form-group row">
+        <label class="col-4 col-form-label"> Park Name: </label>
+        <div class="col-8">
+          <input type="text" th:field="*{parkName}" class="form-control" required minlength="2" maxlength="15"
+            placeholder="Park Name" />
+        </div>
+      </div>
 
-			<div class="form-group row">
-				<label class="col-4 col-form-label"> Address: </label>
-				<div class="col-8">
-					<input type="text" th:field="*{address}" class="form-control" required
-						minlength="2" maxlength="40" placeholder="Address" />
-				</div>
-			</div>
+      <div class="form-group row">
+        <label class="col-4 col-form-label">Price: </label>
+        <div class="col-8">
+          <input type="number" th:field="*{price}" class="form-control" required placeholder="Price" />
+          <div class="alert alert-danger" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div>
+        </div>
+      </div>
 
-			<div class="form-group row">
-				<label class="col-4 col-form-label"> Introduction: </label>
-				<div class="col-8">
-					<input type="text" th:field="*{introduction}" class="form-control" required
-						minlength="2" maxlength="15" placeholder="Introduction" />
-				</div>
-			</div>
-			
-						<div class="form-group row">
-				<label class="col-4 col-form-label"> Image: </label>
-				<div class="col-8">
-					<input type="text" th:field="*{image}" class="form-control" required
-						minlength="2" maxlength="15" placeholder="Image" />
-				</div>
-			</div>
-			
+      <div class="form-group row">
+        <label class="col-4 col-form-label"> Address: </label>
+        <div class="col-8">
+          <input type="text" th:field="*{address}" class="form-control" required minlength="2" maxlength="40"
+            placeholder="Address" />
+        </div>
+      </div>
 
-			<div class="m-3">
-	
-				
-				<div class="form-group row">
-					<label class="col-4 col-form-label">Pulished: </label>
-					<div class="col-8">
-						<input type="text" th:field="*{pulished}" class="form-control"
-							required placeholder="Pulished" />
-					</div>
-				</div>
+      <div class="form-group row">
+        <label class="col-4 col-form-label"> Introduction: </label>
+        <div class="col-8">
+          <input type="text" th:field="*{introduction}" class="form-control" required minlength="2" maxlength="15"
+            placeholder="Introduction" />
+        </div>
+      </div>
 
-				
-	
-					
+      <div class="form-group row">
+        <label class="col-4 col-form-label"> Image: </label>
+        <div class="col-8">
+          <input type="file" name="park_image" class="form-control" accept="image/png, image/jpeg" required />
+        </div>
+      </div>
 
-				<div>
-					<button type="submit" class="btn btn-primary">Submit</button>
-				</div>
-			</div>
-		</form>
-	</div>
-	
-	 <!--- #FOOTER-->
+
+      <div class="m-3">
+
+
+        <div class="form-group row">
+          <label class="col-4 col-form-label">Pulished: </label>
+          <div class="col-8">
+            <input type="text" th:field="*{pulished}" class="form-control" required placeholder="Pulished" />
+          </div>
+        </div>
+
+
+
+
+
+        <div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!--- #FOOTER-->
   <footer>
     <div class="container">
       <div class="wrapper">
@@ -219,4 +216,5 @@
     </p>
   </footer>
 </body>
+
 </html>
